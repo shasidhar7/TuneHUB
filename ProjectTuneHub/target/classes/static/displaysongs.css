@@ -1,0 +1,102 @@
+/* Resetting default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('images/music3.jpg');
+    background-size: cover;
+    background-color: #f0f0f0;
+    /* background: Grey; */
+    position: relative; /* Ensure proper positioning for child elements */
+}
+
+h2 {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 24px;
+    color:#1db954;
+}
+
+.container {
+    width: 100%;
+    border-collapse: collapse;
+    position: relative; /* Ensure proper stacking context */
+    z-index: 1;
+}
+
+.table{
+	max-width: 700px;
+    margin: 20px auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    z-index:2;
+    position: relative; /* Ensure proper stacking context */
+}
+
+.logout-btn,
+.back {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1DB954; /* Button color */
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.btn-container{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.logout-btn:hover,
+.back:hover {
+    background-color: #169c41; /* Button hover color */
+}
+
+.container th,
+.container td {
+   padding: 15px 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    color: white;
+}
+
+.container th {
+     background-color: #1db954;
+    color: #fff;
+    text-align:center;
+}
+
+/* Reducing the size of the controls */
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:250px;
+}
+
+.controls::-webkit-media-controls-panel {
+    background-color: #1DB954; /* Audio player controls background color */
+    color: #fff; /* Audio player controls color */
+    border-radius: 5px;
+}
+
+
+.background-text {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 150px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.2);
+}

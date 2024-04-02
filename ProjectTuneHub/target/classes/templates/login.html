@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+<link rel="stylesheet" type="text/css" href="login.css" />
+<meta charset="ISO-8859-1">
+<title>LOGIN</title>
+</head>
+<body>
+
+
+<form action="validate" method="post">
+<h1>TuneHUB</h1>
+
+	<div class="container">
+		<label class="text">Email</label><br>
+		<input type="email" name="email" placeholder="email" required class="input"> <br> <br>
+	
+		<label class="text">Password</label><br>
+		<input type="password" name="password" placeholder="password" required class="input"><br><br>
+	</div>
+	<input type="submit" class="btn" value="LOGIN"> <br>
+	<p class="text">don't have an account? &nbsp;<a href="registration">Register</a></p>
+	
+	<div th:if="${error}" style="color:red;">
+		Invalid email or password!
+	</div>
+	
+</form>
+
+	<div class="background-text">TuneHUB</div>
+
+</body>
+</html>

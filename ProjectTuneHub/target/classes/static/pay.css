@@ -1,0 +1,86 @@
+/* Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    background: url('images/music3.jpg');
+    background-size: cover; /* Ensure the background image covers the entire viewport */
+}
+
+/* Paragraph Container Styles */
+.para {
+    max-width: 600px;
+    margin: 90px auto;
+    color: lavender;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative; /* Ensure the container is positioned relatively */
+    z-index: 2;
+}
+
+.para p {
+    margin-bottom: 20px;
+}
+
+/* Logout Button Container Styles */
+.logout-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+/* Logout Button Styles */
+.logout-btn {
+    padding: 9px 18px;
+    background-color: #f37254;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+    background-color: #ff6f71; /* Change background color on hover */
+    transform: scale(1.05); /* Scale up the button slightly on hover */
+}
+
+/* Premium Section Styles */
+.buy {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.buy-button {
+    padding: 15px 30px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 14px;
+    letter-spacing: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.buy-button:hover {
+    background-color: #45a049;
+}
+
+.background-text {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the text horizontally and vertically */
+    font-size: 150px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.2); /* Adjust text color opacity */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    z-index: 1;
+}

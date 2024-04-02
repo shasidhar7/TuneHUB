@@ -1,0 +1,79 @@
+/* Resetting default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: url('images/music3.jpg');
+    background-size: cover;
+    color: #000; /* Text color */
+    position: relative; /* Added position relative */
+}
+
+.form-container {
+    position: relative; /* Added position relative */
+    width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #c0c0c0; /* Form background color */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.label {
+    font-size: 18px;
+}
+
+.input {
+    width: calc(100% - 20px);
+    padding: 8px 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9; /* Input background color */
+    border-radius: 5px;
+}
+
+.input:focus {
+    outline: none;
+    border-color: #1DB954; /* Focus color */
+}
+
+.btn,
+.back {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1DB954; /* Button color */
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover,
+.back:hover {
+    background-color: #169c41; /* Button hover color */
+}
+
+.background-text {
+    position: absolute; /* Changed position to absolute */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 150px; /* Adjust font size as needed */
+    font-weight: bold;
+    justify-content:center;
+    color: rgba(255, 255, 255, 0.2); /* Text color with opacity */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for better visibility */
+    text-align: center; /* Center align the text */
+    z-index: -1;
+    
+}

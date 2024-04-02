@@ -1,0 +1,99 @@
+/* Resetting default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: url('images/music3.jpg');
+    /*  background-color: #f4f4f4; */
+    /* background: linear-gradient(135deg, #e44242, #673ab7) */; /* Pink and violet gradient */
+    color: #fff; /* Set paragraph color to white */
+    background-size: cover;
+}
+
+p {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 24px;
+    color: #ffd423;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* flex-wrap: wrap; */
+    flex-direction:column;
+    margin-top: 50px;
+}
+
+.container-1 {
+    text-align: center;
+    margin-bottom:8px;
+}
+
+.add-songs,
+.view-songs,
+.create-playlist,
+.view-playlist {
+    display: inline-block;
+}
+
+.add-btn,
+.view-btn1,
+.create-btn,
+.view-btn2 {
+    background-color: #1DB954;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.add-btn:hover,
+.view-btn1:hover,
+.create-btn:hover,
+.view-btn2:hover {
+    background-color: #169c41;
+}
+
+.logout-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.logout-btn {
+    background-color: #d9534f;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+    background-color: #c9302c;
+}
+
+.background-text {
+    position: absolute;
+    font-size: 150px;
+    opacity: 0.2;
+    font-weight:bold;
+    z-index: -1;
+    pointer-events: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    
+}

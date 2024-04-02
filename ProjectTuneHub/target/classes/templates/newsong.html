@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" type="text/css" href="newsong.css"/>
+<head>
+<meta charset="ISO-8859-1">
+<title>ADD SONG</title>
+</head>
+<body>
+<div class="form">
+<form action="addsong" method="post" class="form-container">
+<h2>Add Song</h2>
+
+	<label class="label">Song Name:</label><br>
+	<input type="text" name="name" class="input">
+	<br><br>
+	
+	<label class="label">Song Artist:</label><br>
+	<input type="text" name="artist" class="input">
+	<br><br>
+	
+	<label class="label">Song Genre:</label><br>
+	<input type="text" name="genre" class="input">
+	<br><br>
+	
+	<label class="label">Song Link:</label><br>
+	<input type="text" name="link" class="input">
+	<br><br>
+	
+	<input href="back" type="button" onclick="goBack()" value="BACK" class="back"> &nbsp;
+	<input type="submit" value="ADD SONG" class="btn">
+
+</form>
+</div>
+	<div class="background-text">TuneHUB</div>
+
+</body>
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+</html>

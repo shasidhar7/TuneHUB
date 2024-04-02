@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>LOGIN</title>
+</head>
+<body>
+
+<form action="validate" method="post">
+<h2>USER LOGIN</h2>
+
+	<label>Email:</label><br> 
+	<input type="email" name="email" required> <br> <br>
+	
+	<label>Password:</label><br>
+	<input type="password" name="password" required><br><br>
+	
+	<input type="submit" value="LOGIN"> <br>
+	<p>don't have an account?<a href="registration">Register</a></p>
+	
+	<div th:if="${error}" style="color:red;">
+		Invalid email or password!
+	</div>
+	
+</form>
+
+</body>
+</html>

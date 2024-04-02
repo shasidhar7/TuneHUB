@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<link rel="stylesheet" type="text/css" href="pay.css"/>
+<head>
+<meta charset="ISO-8859-1">
+
+<title>View Course</title>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+</head>
+<body>
+
+	<div class="logout-container">
+        <form action="logout" class="logout-form">
+            <input type="submit" value="LOGOUT" class="logout-btn">
+        </form>
+    </div> <br>
+   
+   <div class="para">
+	<div >
+		<p> Ready to unlock premium benefits and accelerate your learning journey?
+		 Click "PREMIUM" below to subscribe and gain instant access to a world of knowledge 
+		 and opportunities!</p>
+
+		<p>Note: Payment is securely processed through Razorpay for your peace of mind.</p>
+	</div>
+	
+	
+
+	<div class="buy">
+		<form id="payment-form">
+			<button type="submit" class="buy-button">PREMIUM</button>
+		</form>
+	</div> 
+ </div>
+	<script>
+$(document).ready(function() {
+    $(".buy-button").click(function(e) {
+        e.preventDefault();
+        var form = $(this).closest('form');
+        
+        
+        createOrder();
+    });
+});
+
+function createOrder() {
+	
+    $.post("/createOrder")
+        .done(function(order) {
+            order = JSON.parse(order);
+            var options = {
+                "key": "rzp_test_iO7AgTpjgQSek5",
+                "amount": order.amount_due.toString(),
+                "currency": "INR",
+                "name": "Tune Hub",
+                "description": "Test Transaction",
+                "order_id": order.id,
+                "handler": function (response) {
+                    verifyPayment(response.razorpay_order_id, response.razorpay_payment_id, response.razorpay_signature);
+                },
+                "prefill": {
+                    "name": "Your Name",
+                    "email": "test@example.com",
+                    "contact": "9999999999"
+                },
+                "notes": {
+                    "address": "Your Address"
+                },
+                "theme": {
+                    "color": "#F37254"
+                }
+            };
+            var rzp1 = new Razorpay(options);
+            rzp1.open();
+        })
+        .fail(function(error) {
+            console.error("Error:", error);
+        });
+}
+
+function verifyPayment(orderId, paymentId, signature) {
+     $.post("/verify", { orderId: orderId, paymentId: paymentId, signature: signature })
+         .done(function(isValid) {
+             if (isValid) {
+            	 alert("Payment successful");
+             	window.location.href = 'payment-success';
+             } else {
+                alert("Payment failed");
+             	window.location.href = 'payment-success';
+             }
+         })
+         .fail(function(error) {
+             console.error("Error:", error);
+         });
+}
+</script>
+</body>
+
+	<div class="background-text">TuneHUB</div>
+</html>

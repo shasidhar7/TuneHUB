@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<link rel="stylesheet" type="text/css" href="customerhome.css" />
+
+<head>
+<meta charset="ISO-8859-1">
+<title>CUSTOMER HOME</title>
+</head>
+<body>
+
+<h2>LISTEN THE LATEST SONGS</h2>
+
+  <div class="logout-container">
+        <form action="logout" class="logout-form">
+            <input type="submit" value="LOGOUT" class="logout-btn">
+        </form>
+    </div> <br>
+
+<div th:unless="${ispremium}" class="non-premium">
+	<details class="para">
+		<summary>Why TuneHUB Premium?</summary>
+		<p>TuneHUB premium is helpful to listen & enjoy all the latest songs. </p>
+	</details> <br/>
+	<p class="para">"Welcome to TuneHUB! Ready to explore the latest music? Upgrade to TuneHUB Premium to unlock a world of unlimited access to the
+	 hottest tracks, albums, and playlists. 
+	 With Premium, you can enjoy ad-free listening, offline downloads, 
+	 and exclusive content curated just for you. 
+	 Don't miss out on the ultimate music
+	  experience upgrade now and dive into the latest hits in high 
+	  quality, anytime, anywhere."</p> <br><br>
+	
+	<form action="pay" class="form-container">
+		<input type="submit" value="GET PREMIUM" class="btn">
+	</form>
+
+<!-- 	<form action="logout" class="form-container">
+		<input type="submit" value="LOGOUT" class="btn">
+	</form> -->
+</div>
+
+<div th:if="${ispremium}" class="premium">
+
+	<table border="1" class="container">
+		<thead>
+			<tr>
+				<th>NAME</th>
+				<th>ARTIST</th>
+				<th>GENRE</th>
+				<th>PLAY</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr th:each="song:${songs}">
+				<td th:text ="${song.name}"></td>
+				<td  th:text ="${song.artist}"></td>
+				<td  th:text ="${song.genre}"></td>
+				<td >
+					<audio controls class="audio-controls">
+						<source th:src="${song.link}">
+					</audio>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
+</div>
+<div class="background-text">TuneHUB</div>
+</body>
+</html>

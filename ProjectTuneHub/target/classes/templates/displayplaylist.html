@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" type="text/css" href="displayplaylist.css">
+<head>
+<meta charset="ISO-8859-1">
+<title>Playlists</title>
+
+</head>
+<body>
+<h2>PLAYLISTS</h2>
+
+<div class="table">
+<table border="1" class="container">
+	<thead>
+		<tr>
+			<th>Id</th>
+			<th>Playlist Name</th>
+			<th>Play</th>
+		</tr>
+	</thead>
+	
+	<tbody>
+		<tr th:each="p:${playlists}">
+			<td th:text="${p.id}"></td>
+			<td th:text="${p.name}"></td>
+			<td>
+				
+				<ul>
+					<li th:each="song:${p.songs}">
+						<span th:text="${song.name}" class="long-span"></span>
+					
+						<audio controls class="controls"> 
+							<source th:src="${song.link}">
+						</audio>
+						
+					</li>
+				</ul>
+			</td>
+		</tr>
+	</tbody>
+</table> <br>
+
+	<div class="btn-container">
+		<form action="back">
+			<input type="submit" value="BACK" class="back"> &nbsp; &nbsp;
+		</form>
+		
+		<form action="logout">
+			<input type="submit" value="LOGOUT" class="logout-btn">
+		</form>
+	</div>
+	
+</div>
+
+</body>
+<div class="background-text">TuneHUB</div>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" type="text/css" href="createplaylist.css">
+<head>
+<meta charset="ISO-8859-1">
+<title>CREATE PLAYLIST</title>
+</head>
+<body>
+<h2> CREATE PLAYLIST</h2>
+
+	<form action="addplaylist" method="post" class="form-container">
+		<label class="label">Playlist Name:</label> 
+		<input type="text" name="name" class="input">
+		<br>
+
+		<div th:each="song:${songs}">
+			<input type="checkbox" th:name="songs" th:value="${song.id}" class="checkbox">
+			<label th:text="${song.name}"></label>
+		</div>
+		<br>
+		<input href="back" type="button" onclick="goBack()" value="BACK" class="back"> &nbsp;
+		<input type="submit" value="ADD PLAYLIST" class="btn">
+	</form>
+
+<div class="background-text">TuneHUB</div>
+</body>
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+</html>

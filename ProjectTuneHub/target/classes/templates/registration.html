@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" type="text/css" href="registration.css" />
+<head>
+<meta charset="ISO-8859-1">
+<title>REGISTER</title>
+</head>
+<body>
+
+<form action="register" method="post">
+<h1>Registration</h1>
+ <div class="container">
+	<label class="text">Username</label> <br>
+		<input type="text" name="username" class="input" required placeholder="username">
+		<br><br>
+
+	<label class="text">Email</label><br>
+		<input type="email" name="email" class="input" required placeholder="name@domain.com">
+		<br><br>
+
+	<label class="text">Password</label><br>
+		<input type="password" name="password" class="input" required placeholder="password">
+		<br><br>
+	
+	<label class="text">Gender</label><br>
+		<input type="radio" name="gender" value="male"> <label class="label-text"> Male </label>
+		<input type="radio" name="gender" value="female"> <label class="label-text">Female </label>
+		<input type="radio" name="gender" value="others"> <label class="label-text">Others </label>
+		<br><br>
+				
+	<label class="text">Role</label><br>
+		<input type="radio" name="role" value="admin"> <label class="label-text">Admin </label>
+		<input type="radio" name="role" value="customer"> <label class="label-text">Customer</label>
+		<br><br>
+
+	<label class="text">Address</label><br>
+		<textarea name="address"class="input" required placeholder="Address"></textarea>
+		<br><br>
+ </div>
+	<input type="submit" value ="Register" class="btn"> <br>
+	
+	<p class="label-text">Already have an Account? &nbsp;<a href="/">Login</a></p>
+</form>
+
+ <div class="background-text">TuneHUB</div>
+	
+
+</body>
+</html>
