@@ -82,7 +82,7 @@ src
    ```
 5. Access the application:
     - Open your browser and navigate to http://localhost:8080.
-
+---
 ## Razorpay Integration
 ### Steps to Set Up Razorpay:
   1. Create an account at Razorpay.
@@ -92,4 +92,4 @@ src
    ```java
      RazorpayClient razorpay = new RazorpayClient("rzp_test_xxx", "your_secret_key");
    ```
-
+---
