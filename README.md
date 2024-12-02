@@ -55,8 +55,7 @@ src
 ## Setup Instructions  
 
 ### Prerequisites  
-- Java Development Kit (JDK) 8 or higher  
-- Maven  
+- Java Development Kit (JDK) 8 or higher    
 - MySQL (Version 5.7.20)  
 - Razorpay account for payment gateway setup  
 
